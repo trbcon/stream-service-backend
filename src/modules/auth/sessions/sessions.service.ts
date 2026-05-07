@@ -42,7 +42,7 @@ export class SessionsService {
             new InternalServerErrorException('Не удалось сохранить сессию'),
           );
 
-        resolve({ user });
+        resolve(user);
       });
     });
   }

@@ -8,7 +8,7 @@ import { ConfigService } from '@nestjs/config';
 import { ValidationPipe } from '@nestjs/common';
 import { ms, type StringValue } from './shared/utils/ms.util';
 import { parseBoolean } from './shared/utils/parse-boolean.util';
-import { RedisStore } from 'connect-redis';
+import RedisStore from 'connect-redis';
 import { RedisService } from './core/redis/redis.service';
 
 async function bootstrap() {
@@ -46,7 +46,8 @@ async function bootstrap() {
   );
 
   app.enableCors({
-    origin: config.getOrThrow<string>('ALLOWED_ORIGIN'),
+    // origin: config.getOrThrow<string>('ALLOWED_ORIGIN'),
+    origin: 'http://localhost:4000',
     credentials: true,
     exposedHeaders: ['set-cookie'],
   });

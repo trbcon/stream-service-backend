@@ -16,7 +16,7 @@ scalar DateTime
 type Mutation {
   createUser(data: CreateUserInput!): Boolean!
   login(data: loginInput!): UserModel!
-  logout(data: loginInput!): Boolean!
+  logout: Boolean!
 }
 
 type Query {
